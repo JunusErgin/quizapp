@@ -4,24 +4,71 @@
     <title>QuizApp</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="game.js"></script>
 </head>
 
-<body>
+<body onload="init()">
+    <nav class="navbar navbar-light bg-light navbar-custom">
+        <a class="navbar-brand" href="#">
+            <img src="img/question.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            HTML Quiz
+        </a>
+    </nav>
+
     <h1>The awesome HTML Quiz!!</h1>
 
+    <div id="quiz-finished-container" class="d-none">
+        <h2>You won!!</h2>
 
-    <div class="card">
-        <div class="card-body">
-            In diesem Abschnitt wird eine Frage gestellt!!
+        <img src="img/fireworks.png">
+    </div>
+
+    <div id="quiz-container">
+
+        <div id="right-answer" class="alert alert-success d-none" role="alert">
+            Deine Antwort war richtig!!
+        </div>
+        <div id="wrong-answer" class="alert alert-danger d-none" role="alert">
+            Die Antwort war leider falsch.
+        </div>
+
+        <div class="card">
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+            </div>
+            <div class="card-body" id="question">
+                In diesem Abschnitt wird eine Frage gestellt!!
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <div class="quiz-answer-row">
+                <button onclick="answer(1)" id="answer1" class="btn btn-outline-primary">Antwort A</button>
+                <button onclick="answer(2)" id="answer2" class="btn btn-outline-primary">Antwort B</button>
+            </div>
+            <div class="quiz-answer-row mt-4">
+                <button onclick="answer(3)" id="answer3" class="btn btn-outline-primary">Antwort C</button>
+                <button onclick="answer(4)" id="answer4" class="btn btn-outline-primary">Antwort D</button>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button onclick="nextQuestion()" id="next-btn" class="btn btn-info d-none">Nächste Frage</button>
         </div>
     </div>
 
-    <div class="mt-4">
-        <button class="btn btn-primary">Antwort A</button>
-        <button class="btn btn-primary">Antwort B</button>
-        <button class="btn btn-primary">Antwort C</button>
-        <button class="btn btn-primary">Antwort D</button>
-    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-dark footer-custom">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://developerakademie.com" target="_blank">Developer Akademie</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
 </body>
 
 </html>

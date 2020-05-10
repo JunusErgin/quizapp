@@ -2,4 +2,32 @@ body {
     padding: 16px;
     padding-left: 64px;
     padding-right: 64px;
+    padding-top: 96px;
+}
+
+.navbar-custom {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 80px;
+    z-index: 1;
+}
+
+.footer-custom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+}
+
+.quiz-answer-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz-answer-row button {
+    width: 40%;
+    height: 80px;
 }
